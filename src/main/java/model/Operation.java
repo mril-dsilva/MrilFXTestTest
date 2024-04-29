@@ -11,14 +11,14 @@ public class Operation
 	{
 		super();
 		this.num1 = num1;
-		this.num1 = num1;
+		this.num2 = num2;
 		this.op = op;
 		this.result = result;
 	}
 	@Override
 	public String toString()
 	{
-		return num1 + op+ num2+" = "+ result;
+		return num1 + op + num2 + " = " + result;
 	}
 	
 	
