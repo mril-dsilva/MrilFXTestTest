@@ -15,7 +15,12 @@ public class CalcModel
 	
 	ObservableList<Operation> operations = FXCollections.observableArrayList();
 	
-	
+	public CalcModel() {
+		num1.set(0);
+		num2.set(0);
+		result.set(0);;
+		
+	}
 	
 	public void add()
 	{
