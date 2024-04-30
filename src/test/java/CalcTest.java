@@ -80,5 +80,6 @@ class CalcTest
         assertEquals(2, calcModel.getOperations().size());
     }
 	
+	
 
 }
