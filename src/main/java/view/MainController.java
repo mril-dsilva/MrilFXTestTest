@@ -41,7 +41,6 @@ public class MainController
 		
 		Bindings.bindBidirectional(ResultLabel.textProperty(), model.getResult(),converter);
 		
-		
 		HistoryView.setItems(model.getOperations());	
 	}
 
@@ -66,7 +65,7 @@ public class MainController
 	@FXML
     void onDivideButton(ActionEvent event) 
 	{
-		model.multiply();
+		model.divide();
     }
 
 	
