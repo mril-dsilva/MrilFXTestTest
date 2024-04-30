@@ -11,15 +11,16 @@ import model.Operation;
 
 class CalcTest
 {
-
+	CalcModel calcModel;
+	
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		
+		calcModel = new CalcModel();
 	}
 	
-	private Operation operation = new Operation(10.0, "+", 5.0, 15.0);
-	private CalcModel calcModel = new CalcModel();
+	//private Operation operation = new Operation(10.0, "+", 5.0, 15.0);
+	
 	
 	@Test
 	void test()
@@ -62,24 +63,23 @@ class CalcTest
         calcModel.setNum2(new SimpleDoubleProperty(0.0));
         calcModel.divide();
         assertTrue(Double.isNaN(calcModel.getResult().get()));
-		
         
 	}
 	
-	@Test
+	@Test // Test getters and setters for operations
     void operations() {
         Operation operation = new Operation(10.0, "+", 5.0, 15.0);
         assertEquals("10.0+5.0 = 15.0", operation.toString());
         
-        // Test getters for operations
         ObservableList<Operation> operations = FXCollections.observableArrayList(
                 new Operation(10.0, "+", 5.0, 15.0),
                 new Operation(20.0, "-", 7.0, 13.0)
         );
+        
         calcModel.setOperations(operations);
+        assertEquals(operations,calcModel.getOperations());
         assertEquals(2, calcModel.getOperations().size());
+        
     }
-	
-	
 
 }
